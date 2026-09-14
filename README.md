@@ -23,3 +23,8 @@
 - index.html : contenu du site
 - style.css : design
 - assets/ : logo et photos
+
+
+## Mise à jour
+- Liens Cal.com intégrés.
+- Téléphone, e-mail et adresse du shop ajoutés.
