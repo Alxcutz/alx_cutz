@@ -13,7 +13,17 @@
       <img src="assets/logo.jpg" alt="Logo ALX Cutz">
     </a>
 
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="desktop-nav">
+      <a href="#prestations">Prestations</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#horaires">Horaires</a>
+      <a href="#reservation">Rendez-vous</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <nav id="mobile-menu" class="mobile-nav" aria-hidden="true">
       <a href="#prestations">Prestations</a>
       <a href="#galerie">Galerie</a>
       <a href="#horaires">Horaires</a>
@@ -41,6 +51,14 @@
       <div class="hero-photo">
         <img src="assets/coupe-1.jpg" alt="Coupe réalisée par ALX Cutz">
       </div>
+    </section>
+
+    <section class="quick-location" aria-label="Adresse du shop">
+      <div>
+        <p class="eyebrow">LE SHOP</p>
+        <strong>Avenue des Chênes 2, Bierges</strong>
+      </div>
+      <a class="button secondary-button" href="#contact">Voir sur la carte</a>
     </section>
 
     <section id="prestations" class="section">
@@ -144,19 +162,24 @@
         <h2>Nous trouver</h2>
       </div>
 
-      <div class="contact-list">
-        <a href="tel:+32484913017">
-          <span>Téléphone</span>
-          <strong>0484 91 30 17</strong>
-        </a>
-        <a href="mailto:augustinalexander33@gmail.com">
-          <span>E-mail</span>
-          <strong>augustinalexander33@gmail.com</strong>
-        </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Avenue%20des%20Ch%C3%AAnes%202%2C%20Bierges%2C%20Belgique" target="_blank" rel="noopener">
-          <span>Shop</span>
-          <strong>Avenue des Chênes 2, Bierges</strong>
-        </a>
+      <div class="contact-layout">
+        <div class="contact-list">
+          <a href="tel:+32484913017">
+            <span>Téléphone</span>
+            <strong>0484 91 30 17</strong>
+          </a>
+          <a href="mailto:augustinalexander33@gmail.com">
+            <span>E-mail</span>
+            <strong>augustinalexander33@gmail.com</strong>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Avenue%20des%20Ch%C3%AAnes%202%2C%20Bierges%2C%20Belgique" target="_blank" rel="noopener">
+            <span>Adresse du shop</span>
+            <strong>Avenue des Chênes 2, Bierges</strong>
+          </a>
+        </div>
+        <div class="map-wrap">
+          <iframe title="Localisation de ALX Cutz à Bierges" src="https://www.google.com/maps?q=Avenue%20des%20Ch%C3%AAnes%202%2C%20Bierges%2C%20Belgique&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </section>
 
@@ -170,5 +193,20 @@
       <a href="https://www.tiktok.com/@alx_cutz" target="_blank" rel="noopener">TikTok</a>
     </div>
   </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#mobile-menu');
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('aria-hidden', String(open));
+    document.body.classList.toggle('menu-open', !open);
+  });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }));
+</script>
 </body>
 </html>

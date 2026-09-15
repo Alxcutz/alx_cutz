@@ -23,3 +23,6 @@
 - index.html : contenu du site
 - style.css : design
 - assets/ : logo et photos
+
+- Menu mobile avec bouton hamburger.
+- Adresse du shop mise en avant et carte Google Maps intégrée.
