@@ -287,7 +287,7 @@ footer div { display: flex; gap: 18px; }
   background: #050505;
 }
 .hero-logo img {
-  width: min(58%, 390px);
+  width: min(48%, 280px);
   height: auto;
   max-height: 58%;
   object-fit: contain;
@@ -302,10 +302,10 @@ footer div { display: flex; gap: 18px; }
 .tagline { margin-top: 18px; }
 @media (max-width: 900px) {
   .hero-logo { min-height: 360px; }
-  .hero-logo img { width: min(55%, 300px); max-height: 62%; }
+  .hero-logo img { width: min(48%, 240px); max-height: 62%; }
 }
 @media (max-width: 560px) {
   .hero-description { font-size: 14px; line-height: 1.55; }
   .hero-logo { min-height: 300px; }
-  .hero-logo img { width: 58%; }
+  .hero-logo img { width: 50%; }
 }
